@@ -1,0 +1,90 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>Amul-The Taste of India</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css" rel="stylesheet' %}">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/order-sign_up.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    
+</head>
+
+<body id="register_bg">
+	
+	<main>
+		<div id="register">
+			<aside>
+				<figure>
+					<a href="index.html"><img src="{% static 'img/Amul Logo.png' %}" width="140" height="35" alt=""></a>
+				</figure>
+				{% if err %}
+				{{err}}
+				{% endif %}  
+							<form action="{% url 'loginuser' %}" method="POST">{% csrf_token %}
+						<div class="form-group" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+							<label >Email </label>
+							<input type="email" class="form-control" name="Email" id="email">
+							<i class="icon_mail_alt"></i>
+						</div>
+						<div class="form-group" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+							<label>Password</label>
+							<input type="password" class="form-control" name="Password" id="password" value="">
+							<i class="icon_lock_alt"></i>
+						</div>
+						<div class="clearfix add_bottom_15">
+							<div class="checkboxes float-left">
+								<label class="container_check">Remember me
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="form-group" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+								<button class="form-control" type="submit" value="Register" style="background-color: rgb(190, 224, 158);">Login</button>
+							</div>
+						</div>
+						<div class="text-center mt-2"><small><a href="{% url 'forgetpass' %}">Forget Password</a><strong></strong></small></div>
+					
+						<div class="text-center mt-2"><small>Don’t have an account?<strong><a href="{% url 'register' %}">Sign up</a></strong></small></div>
+					    <div class="text-center mt-2"><small><a href="{% url 'indexpage' %}">Back to Home Page</a><strong></strong></small></div>
+						
+					</div>
+				</form>
+				<div class="copy">Amul </div>
+			</aside>
+		</div>
+	</main>
+	<!-- /login -->
+	
+	<!-- COMMON SCRIPTS -->
+    <!-- <script src="{% static 'js/common_scripts.min.js' %}"></script> -->
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+	
+	<!-- SPECIFIC SCRIPTS -->
+	<script src="{% static 'js/pw_strenght.js' %}"></script>	
+  
+</body>
+</html>

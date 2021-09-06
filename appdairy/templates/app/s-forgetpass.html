@@ -1,0 +1,70 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>Amul-The Taste of India</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css" rel="stylesheet' %}">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/order-sign_up.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    
+</head>
+
+<body id="register_bg">
+	
+	<div id="register">
+		<aside>
+			<figure>
+				<a href="index.html"><img src="{% static 'img/Amul Logo.png' %}" width="140" height="35" alt=""></a>
+			</figure>
+			<form action="{% url 's-enterotp' %}" method="POST">{% csrf_token %}
+                <div id="forgot_pw">
+                    <div class="form-group">
+                        <label>Please confirm login email below</label>
+                            <input type="email" class="form-control" name="Email" id="email_forgot">
+                                <i class="icon_mail_alt"></i>
+                                
+                                <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+                                <div class="text-center">
+                                    <button class="form-control" type="submit"  style="background-color: rgb(190, 224, 158);">Send OTP </a></button>
+                                </div>
+                    </div>
+                </div>    
+            </form>
+			<div class="copy">Amul </div>
+		</aside>
+	</div>
+	<!-- /login -->
+	
+	<!-- COMMON SCRIPTS -->
+    <!-- <script src="{% static 'js/common_scripts.min.js' %}"></script> -->
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+	
+	<!-- SPECIFIC SCRIPTS -->
+	<script src="{% static 'js/pw_strenght.js' %}"></script>	
+  
+</body>
+</html>

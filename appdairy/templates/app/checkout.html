@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>Amul-The Teste of India</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/order-sign_up.css' %}" rel="stylesheet">
+    <link href="{% static 'css/detail-page.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+			
+{% include 'app/base.html' %}
+	<main class="bg_gray">
+		
+		<div class="container margin_60_20">
+		    <div class="row justify-content-center">
+		        <div class="col-xl-6 col-lg-8">
+		        	<div class="box_order_form">
+					    <div class="head">
+					        <div class="title">
+					            <h3>Personal Details</h3>
+					        </div>
+					    </div>
+					   
+					    <div class="main">
+					        <div class="form-group">
+					            <label>Customer Name</label>
+					            <input class="form-control" placeholder="write Customer Name">
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Billing Address</label>
+					                    <input class="form-control" placeholder="write Address">
+					                </div>
+					            </div>
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Phone</label>
+					                    <input class="form-control" placeholder="Phone">
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Status</label>
+					                    <input class="form-control" placeholder="status">
+					                </div>
+					            </div>
+					            <div class="col-md-3">
+					                <div class="form-group">
+					                    <label>Order ID</label>
+					                    <input class="form-control" placeholder="0123">
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Order Product</label>
+					                    <input class="form-control" placeholder="123">
+					                </div>
+					            </div>
+					            <div class="col-md-3">
+					                <div class="form-group">
+					                    <label>Date</label>
+					                    <input class="form-control" placeholder="Dates">
+					                </div>
+					            </div>
+					        </div>
+                            <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Total</label>
+					                    <input class="form-control" placeholder="total">
+					                </div>
+					            </div>
+					            <!-- <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Actions</label>
+					                    <input class="form-control" placeholder="actions">
+					                </div>
+					            </div> -->
+					        </div>
+					    </div>
+					</div>
+					<!-- /box_order_form -->
+		            <div class="box_order_form">
+					    <div class="head">
+					        <div class="title">
+					            <h3>Payment Method</h3>
+					        </div>
+					    </div>
+					    <!-- /head -->
+					    <div class="main">
+					        <div class="payment_select">
+					            <label class="container_radio">Credit Card
+					                <input type="radio" value="" checked name="payment_method">
+					                <span class="checkmark"></span>
+					            </label>
+					            <i class="icon_creditcard"></i>
+					        </div>
+					        <div class="form-group">
+					            <label>Name on card</label>
+					            <input type="text" class="form-control" id="name_card_order" name="name_card_order" placeholder="First and last name">
+					        </div>
+					        <div class="form-group">
+					            <label>Card number</label>
+					            <input type="text" id="card_number" name="card_number" class="form-control" placeholder="Card number">
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <label>Expiration date</label>
+					                <div class="row">
+					                    <div class="col-md-6 col-6">
+					                        <div class="form-group">
+					                            <input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="mm">
+					                        </div>
+					                    </div>
+					                    <div class="col-md-6 col-6">
+					                        <div class="form-group">
+					                            <input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="yyyy">
+					                        </div>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="col-md-6 col-sm-12">
+					                <div class="form-group">
+					                    <label>Security code</label>
+					                    <div class="row">
+					                        <div class="col-md-4 col-6">
+					                            <div class="form-group">
+					                                <input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
+					                            </div>
+					                        </div>
+					                        <div class="col-md-8 col-6">
+					                            <img src="img/icon_ccv.gif" width="50" height="29" alt="ccv"><small>Last 3 digits</small>
+					                        </div>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					        <!--End row -->
+					        <div class="payment_select" id="paypal">
+					            <label class="container_radio">Pay with Paypal
+					                <input type="radio" value="" name="payment_method">
+					                <span class="checkmark"></span>
+					            </label>
+					        </div>
+					        <div class="payment_select">
+					            <label class="container_radio">Pay with Cash
+					                <input type="radio" value="" name="payment_method">
+					                <span class="checkmark"></span>
+					            </label>
+					            <i class="icon_wallet"></i>
+					        </div>
+							<a href="#" class="btn_1 gradient full-width mb_5">Conform</a>
+					    </div>
+					</div>
+					<!-- /box_order_form -->
+		        </div>
+		       
+		    </div>
+		   
+		</div>
+		
+		
+	</main>
+	<!-- /main -->
+
+	{% include 'app/footer.html' %}
+	<!--/footer-->
+
+	<div id="toTop"></div><!-- Back to top button -->
+	
+	
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="{% static 'js/common_scripts.min.js' %}"></script>
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="{% static 'js/sticky_sidebar.min.js' %}"></script>
+    <script>
+    	$('#sidebar_fixed').theiaStickySidebar({
+		    minWidth: 991,
+		    updateSidebarHeight: false,
+		    additionalMarginTop: 30
+		});
+    </script>
+</body>
+</html>

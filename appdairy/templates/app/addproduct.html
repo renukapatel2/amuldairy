@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>Amul-Dairy Parlour</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#secondary_nav" data-offset="75"></body>
+    {% include 'app/s-base.html' %}
+    <main class="bg_gray">
+        <form action="{% url 'productaddig' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}	
+            <div class="container margin_60_20">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="box_order_form">
+                            <div class="head">
+                                <div class="title">
+                                    <h3>Add Product</h3>
+                                </div>
+                            </div>
+                            <!-- /head -->
+                            <div class="main">
+                                <div class="from-group">
+                                    <div class="form-group">
+                                        <label>Product Name</label>
+                                        <input class="form-control" type="text" name="Pname" placeholder="Enter product name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Product Image</label>
+                                        <input class="form-control" type="file" name="Pro_img" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Product Weight</label>
+                                        <input class="form-control" type="number" name="productweight" placeholder="enter product weight" >
+                                        <select name="prodweightcat">
+                                            <option selecte disabled>select weight</option>
+                                            <option>liter</option>
+                                            <option>ml</option>
+                                            <option>kg</option>
+                                            <option>gm</option>
+                                            
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Product Category</label>
+                                        <select name="Pcat">
+                                            <option selecte disabled>select Cat</option>
+                                            <option>Milk</option>
+                                            <option>Bread Spreads</option>
+                                            <option>Cheese</option>
+                                            <option>Paneer</option>
+                                            <option>Beverage Range</option>
+                                            <option>Ice Creame</option>
+                                            <option>Chocolate</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Product price</label>
+                                        <input class="form-control" type="text" name="productprice" placeholder="enter product price" >
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="form-control" type="submit" value="Register" style="background-color: rgb(190, 224, 158);">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /box_order_form -->
+                        
+                    </div>
+
+                </div>
+                <!-- /row -->
+            </div>
+        </form>
+
+        <!-- /container -->
+        
+    </main>
+    {% include 'app/footer.html' %}
+    <script src="{% static 'js/common_scripts.min.js' %}"></script>
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+
+    <!-- Video header -->
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
+    <script src="{% static 'js/video_header.min.js' %}"></script>
+    <script>
+        HeaderVideo.init({
+            container: $('.header-video'),
+            header: $('.header-video--media'),
+            videoTrigger: $("#video-trigger"),
+            autoPlayVideo: true
+        });
+    </script>
+
+    <!-- Autocomplete -->
+    <script>
+    function initMap() {
+        var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                window.alert("Autocomplete's returned place contains no geometry");
+                return;
+            }
+
+            var address = '';
+            if (place.address_components) {
+                address = [
+                    (place.address_components[0] && place.address_components[0].short_name || ''),
+                    (place.address_components[1] && place.address_components[1].short_name || ''),
+                    (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+            }
+        });
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"></script>
+
+</body>
+</html>
+

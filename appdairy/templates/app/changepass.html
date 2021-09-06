@@ -1,0 +1,91 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>FooYes - Quality delivery or takeaway food</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'img/apple-touch-icon-57x57-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114-precomposed.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'img/apple-touch-icon-144x144-precomposed.png' %}">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css" rel="stylesheet' %}">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/order-sign_up.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    
+</head>
+
+<body id="register_bg">
+	
+	<div id="register">
+		<aside>
+			<figure>
+				<a href="index.html"><img src="{% static 'img/Amul Logo.png' %}" width="140" height="35" alt=""></a>
+			</figure>
+			<!--div class="access_social">
+					<a href="#0" class="social_bt facebook">Register with Facebook</a>
+					<a href="#0" class="social_bt google">Register with Google</a>
+			</div>
+            <div class="divider"><span>Or</span></div-->
+				<!--div class="sign-in-wrapper">
+					<a href="#0" class="social_bt facebook">Login with Facebook</a>
+					<a href="#0" class="social_bt google">Login with Google</a>
+					<div class="divider"><span>Or</span></div-->
+						<form action="{% url 'changepassword' %}" method="POST">{% csrf_token %}
+                        
+                            <div id="forgot_pw">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <label >Change The Password</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Please confirm login email below</label>
+                                    
+                                        <input type="Email" class="form-control" name="Email" value={{data.Email}} placeholder={{data.Email}} id="Email_forgot" readonly>
+                                        <i class="icon_mail_alt"></i>
+                                    </div>
+                                    <div class="form-group" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                                        <input class="form-control" type="password" name="newpswd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                                        <input class="form-control" type="password" name="repeatpswd" placeholder="Conform Password">
+                                    </div>
+                                </div>
+                                <!--p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p-->
+                                <div class="text-center">
+                                    <button class="form-control" type="submit" value="forgetpass" style="background-color: rgb(190, 224, 158);">Reset Password </button>
+                                </div>
+                            </div>
+                        </form>
+			<div class="copy">Amul </div>
+		</aside>
+	</div>
+	<!-- /login -->
+	
+	<!-- COMMON SCRIPTS -->
+    <!-- <script src="{% static 'js/common_scripts.min.js' %}"></script> -->
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+	
+	<!-- SPECIFIC SCRIPTS -->
+	<script src="{% static 'js/pw_strenght.js' %}"></script>	
+  
+</body>
+</html>

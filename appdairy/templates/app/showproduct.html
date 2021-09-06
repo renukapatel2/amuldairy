@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="FooYes - Quality delivery or takeaway food">
+	<meta name="author" content="Ansonika">
+	<title>Amul-The Teste of India</title>
+
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="{% static 'img/apple-touch-icon-57x57-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
+		href="{% static 'img/apple-touch-icon-72x72-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+		href="{% static 'img/apple-touch-icon-114x114-precomposed.png' %}">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+		href="{% static 'img/apple-touch-icon-144x144-precomposed.png' %}">
+
+	<!-- GOOGLE WEB FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+	<!-- BASE CSS -->
+	<link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+	<!-- SPECIFIC CSS -->
+	<link href="{% static 'css/detail-page.css' %}" rel="stylesheet">
+
+	<!-- YOUR CUSTOM CSS -->
+	<link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target="#secondary_nav" data-offset="75">
+    {% include 'app/s-base.html' %}
+	<main>
+
+		<div class="hero_in detail_page background-image" data-background="url({% static 'img/Amul-banner.jpg' %}">
+			<div class="wrapper opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+
+				<div class="container">
+					<div class="main_info">
+						<div class="row">
+							<div class="col-xl-4 col-lg-5 col-md-6">
+								
+								<h1>Amul-The Teste of India</h1>
+								India-Amul Dairy,Ahmedabad <a
+									href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+H%C3%B4pitaux+de+Paris+(AP-HP)+-+Si%C3%A8ge!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361"
+									target="blank">Get directions</a>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div> 
+		
+
+		<!-- <div class="bg_gray">
+			<div class="container margin_detail">
+				<div class="col-lg-8 list_menu"></div>
+					{% for product in data %}
+					</a>
+					<h4>{{product.Pro_category}}</h4>
+					<div class="row">
+						<div class="col-md-6">
+							<a href="{% url 'delete' pk=product.id %}"> del<i class="fa fa-trash"></i></a>
+								<a class="menu_item modal_dialog" href="#modal-dialog">
+									<figure><img src="{{MEDIA_URL}}{{product.Pro_image.url}}" data-src="" alt="thumb"
+											class="lazy" height="100" width="100"></figure>
+									<h3>{{product.Pro_name}}</h3>
+									<p>{{product.Pro_weight}} </p>
+									
+									<strong>{{product.Pro_price}}
+									</strong>
+									
+									
+								</a>
+							</a>
+						</div>
+					</div>
+				    {% endfor %}
+			    </div>
+			</div>
+		</div>  -->
+		<div class="bg_gray">
+	        <div class="container margin_detail">
+	            <div class="row">
+	                <div class="col-lg-8 list_menu">
+						{% for product in data %}
+	                    <section id="section-1">
+	                        <h4>{{product.Pro_category}}</h4>
+	                        <div class="table_wrapper">
+	                            <table class="table cart-list menu-gallery">
+	                                <thead>
+	                                    <tr>
+	                                        <th>
+	                                            Item
+	                                        </th>
+	                                        <th>
+	                                            Price
+	                                        </th>
+	                                        <th>
+												Delete
+	                                        </th>
+											
+	                                    </tr>
+	                                </thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td class="d-md-flex align-items-center">
+	                                            <figure><img src="{{MEDIA_URL}}{{product.Pro_image.url}}" data-src="" alt="thumb"
+													class="lazy" height="100" width="100"></figure>
+	                                            <div class="flex-md-column">
+	                                                <h4>{{product.Pro_name}}</h4>
+	                                                <p>
+	                                                    {{product.Pro_weight}}{{product.Pro_weightCat}}
+	                                                </p>
+	                                            </div>
+	                                        </td>
+	                                        <td>
+	                                            <strong>{{product.Pro_price}}</strong>
+	                                        </td>
+											
+	                                        <td class="options">
+	                                            <div class="dropdown dropdown-options">
+	                                                <a href="{% url 'delete' pk=product.id %}" ><i class="icon_trash"></i></a>
+	                                                
+	                                            </div>
+	                                        </td>
+	                                    </tr>
+	                                    
+	                                </tbody>
+	                            </table>
+	                        </div>
+
+	                    </section>
+	                    {% endfor %}
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</main>
+	{% include 'app/footer.html' %}
+
+	<!-- COMMON SCRIPTS -->
+	<script src="{% static 'js/common_scripts.min.js' %}"></script>
+	<script src="{% static 'js/common_func.js' %}"></script>
+	<script src="{% static 'assets/validate.js' %}"></script>
+
+	<!-- SPECIFIC SCRIPTS -->
+	<script src="{% static 'js/sticky_sidebar.min.js' %}"></script>
+	<script src="{% static 'js/sticky-kit.min.js' %}"></script>
+	<script src="{% static 'js/specific_detail.js' %}"></script>
+
+</body>
+
+</html>

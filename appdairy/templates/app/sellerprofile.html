@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>FooYes - Quality delivery or takeaway food</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/order-sign_up.css' %}" rel="stylesheet">
+    <link href="{% static 'css/detail-page.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+				
+	{% include 'app/s-base.html' %}
+	
+	<main class="bg_gray">
+		<form action="{% url 's-updateprofile' %}" method="POST">{% csrf_token %}
+		
+			<div class="container margin_60_20">
+				<div class="row justify-content-center">
+					<div class="col-xl-6 col-lg-8">
+						<div class="box_order_form">
+							<div class="head">
+								<div class="title">
+									<h3>Profile</h3>
+								</div>
+							</div>
+							<!-- /head -->
+							<div class="main">
+								<div class="form-group">
+									<label>First  Name</label>
+									<input class="form-control"type="text" value="{{sel.Fname}}" name="fname" placeholder="First Name">
+								</div>
+								<div class="form-group">
+									<label> Last Name</label>
+									<input class="form-control" type="text" value="{{sel.Lname}}" name="lname" placeholder="First Last Name">
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Email Address</label>
+											<input class="form-control" type="email" value="{{sel.Email}}" name="email" placeholder="Email Address">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Phone</label>
+											<input class="form-control" type="number" value="{{sel.Mobile}}"  name="ph" placeholder="Phone">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label>Full Address</label>
+									<input class="form-control" type="text" value="{{sel.Address}}"  name="adr" placeholder="Full Address">
+								</div>
+								<div class="form-group">
+									
+									<button class="form-control" type="submit" value="Register" style="background: rgb(190, 224, 158);">Profile Update</button>
+								</div>
+								<div class="text-center mt-2"><small><a href="{% url 'sellerindexpage' %}">Back to Home Page</a><strong></strong></small></div>
+								
+								</div>
+							</div>
+						</div>
+						<!-- /box_order_form -->
+						
+							
+							<!-- /head -->
+							
+
+				</div>
+				<!-- /row -->
+			</div>
+		</form>
+		<!-- /container -->
+		
+	</main>
+	{% include 'app/footer.html' %}
+
+	<div id="toTop"></div><!-- Back to top button -->
+	
+	
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="{% static 'js/common_scripts.min.js' %}"></script>
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="{% static 'js/sticky_sidebar.min.js' %}"></script>
+    <script>
+    	$('#sidebar_fixed').theiaStickySidebar({
+		    minWidth: 991,
+		    updateSidebarHeight: false,
+		    additionalMarginTop: 30
+		});
+    </script>
+
+</body>
+</html>

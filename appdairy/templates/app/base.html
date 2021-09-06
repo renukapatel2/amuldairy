@@ -1,0 +1,81 @@
+{% load static %}
+
+
+    <header class="header_in clearfix">
+        <div class="container">
+            <div id="logo">
+                <a href="index.html">
+                    <!-- <img src="{% static 'img/logo_sticky.svg' %}" width="140" height="35" alt=""> -->
+                    <img src="{% static 'img/amul logo1.jpg' %}" width="162" height="35" alt="" class="logo_sticky">
+                    
+                </a>
+            </div>
+            <div class="layer" ></div>
+            <ul id="top_menu">
+                
+                {% if request.session.id %}
+                <li><a href="{% url 'logout' %}" class="login">Logout</a></li>
+                <li>
+                    <div class="dropdown user clearfix">
+                        <a href="{% url 'userprofile' %}" data-toggle="dropdown">
+                            <span>Profile</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-content">
+                                <ul>
+                                    <li><a href="{% url 'userprofile' %}"><i class="icon_cog"></i>Profile</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                {% else %}    
+                </li>
+                <li>
+                    <div class="dropdown user clearfix">
+                        <a href="#" data-toggle="dropdown">
+                            <span>Sign Account</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-menu-content">
+                                <ul>
+                                    <li><a href="{% url 'login' %}"><i class="icon_cog"></i>Sign In</a></li>
+                                    <li><a href="{% url 'registeruser' %}"><i class="icon_cog"></i>Sign Up</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                {% endif %}    
+                </li>
+               
+                
+            </ul>
+            
+            
+            <nav class="main-menu">
+                <ul>
+                    <li class="submenu">
+                        <a href="{% url 'homepage' %}" class="show-submenu">Home</a>
+
+                    </li>
+                    <li class="submenu">
+                       
+                        <a href="{% url 'viewcart' %}" class="show-submenu">ViewCart</a>
+                        
+                        
+                    </li>
+                    <li class="submenu">
+                        <a href="{% url 'contacts'%}" class="show-submenu">Contacts</a>
+                        
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    

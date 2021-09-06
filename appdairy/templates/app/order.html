@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="FooYes - Quality delivery or takeaway food">
+    <meta name="author" content="Ansonika">
+    <title>Amul-The Teste of India</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="{% static 'css/bootstrap_customized.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="{% static 'css/order-sign_up.css' %}" rel="stylesheet">
+    <link href="{% static 'css/detail-page.css' %}" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+				
+    {% include 'app/base.html' %}
+<!-- /header -->
+	
+	<main class="bg_gray">
+		
+		<div class="container margin_60_20">
+		    <div class="row justify-content-center">
+		        <div class="col-xl-6 col-lg-8">
+		        	<div class="box_order_form">
+					    <div class="head">
+					        <div class="title">
+					            <h3>Personal Details</h3>
+					        </div>
+					    </div>
+					    <!-- /head -->
+					    <div class="main">
+					        <div class="form-group">
+					            <label>Customer Name</label>
+					            <input class="form-control" placeholder="write Customer Name">
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Billing Address</label>
+					                    <input class="form-control" placeholder="write Address">
+					                </div>
+					            </div>
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Phone</label>
+					                    <input class="form-control" placeholder="Phone">
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Status</label>
+					                    <input class="form-control" placeholder="status">
+					                </div>
+					            </div>
+					            <div class="col-md-3">
+					                <div class="form-group">
+					                    <label>Order ID</label>
+					                    <input class="form-control" placeholder="0123">
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Order Product</label>
+					                    <input class="form-control" placeholder="123">
+					                </div>
+					            </div>
+					            <div class="col-md-3">
+					                <div class="form-group">
+					                    <label>Date</label>
+					                    <input class="form-control" placeholder="Dates">
+					                </div>
+					            </div>
+					        </div>
+                            <div class="row">
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Total</label>
+					                    <input class="form-control" placeholder="total">
+					                </div>
+					            </div>
+					            <div class="col-md-6">
+					                <div class="form-group">
+					                    <label>Actions</label>
+					                    <input class="form-control" placeholder="actions">
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+                        <a href="#" class="btn_1 gradient full-width mb_5">Payment</a>
+					</div>
+					<!-- /box_order_form -->
+		           
+					<!-- /box_order_form -->
+		        </div>
+		        <!-- /col -->
+		        <div class="col-xl-4 col-lg-4" id="sidebar_fixed">
+		            <div class="box_order">
+		                <div class="head">
+		                    <h3>Order Summary</h3>
+		                    <div>Pizzeria da Alfredo</div>
+		                </div>
+		               
+		                <div class="main">
+		                	<ul>
+		                		<li>Date<span>Today 23/11/2019</span></li>
+		                		<li>Hour<span>08.30pm</span></li>
+		                		<li>Type<span>Delivery</span></li>
+		                	</ul>
+		                	<hr>
+		                	<ul class="clearfix">
+		                		<li><a href="#0">1x Enchiladas</a><span>$11</span></li>
+		                		<li><a href="#0">2x Burrito</a><span>$14</span></li>
+		                		<li><a href="#0">1x Chicken</a><span>$18</span></li>
+		                		<li><a href="#0">2x Corona Beer</a><span>$9</span></li>
+		                		<li><a href="#0">2x Cheese Cake</a><span>$11</span></li>
+		                	</ul>
+		                	
+		                	<ul class="clearfix">
+		                		<li>Subtotal<span>$56</span></li>
+		                		<li>Delivery fee<span>$10</span></li>
+		                		<li class="total">Total<span>$66</span></li>
+		                	</ul>
+		                    <a href="{% url 'confirm' %}" class="btn_1 gradient full-width mb_5">Order Now</a>
+		                    <div class="text-center"><small>Or Call Us at <strong>0432 48432854</strong></small></div>
+		                </div>
+		            </div>
+		          
+		        </div> -->
+
+		    </div>
+		    <!-- /row -->
+		</div>
+		<!-- /container -->
+		
+	</main>
+	<!-- /main -->
+
+	{% include 'app/footer.html' %}
+	<div id="toTop"></div><!-- Back to top button -->
+	
+	
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="{% static 'js/common_scripts.min.js' %}"></script>
+    <script src="{% static 'js/common_func.js' %}"></script>
+    <script src="{% static 'assets/validate.js' %}"></script>
+
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="{% static 'js/sticky_sidebar.min.js' %}"></script>
+    <script>
+    	$('#sidebar_fixed').theiaStickySidebar({
+		    minWidth: 991,
+		    updateSidebarHeight: false,
+		    additionalMarginTop: 30
+		});
+    </script>
+
+</body>
+</html>
